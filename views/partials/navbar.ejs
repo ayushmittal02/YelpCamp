@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">MittalBnB</a>
+        <a class="navbar-brand" href="/">YelpCamp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -18,10 +18,10 @@
                 </form>
                 <% if(!currentUser) {%>
                     <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link" href="/register">SignUp</a>
                     <% } else {%>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            <button class="btn btn-secondary dropdown-toggle ml-2" type="button" id="dropdownMenuButton"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <%= currentUser.username %>
                             </button>

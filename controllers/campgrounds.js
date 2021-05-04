@@ -14,7 +14,7 @@ module.exports.index = async (req, res) => {
     if(req.query.search) {
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
         Campground.find({title: regex}).skip((perPage * page) - perPage).limit(perPage).exec(function (err, campgrounds) {
-            Campground.count({title: regex}).exec(function (err, count) {
+            Campground.countDocuments({title: regex}).exec(function (err, count) {
                 if (err) {
                     console.log(err);
                     res.redirect("back");
@@ -35,7 +35,7 @@ module.exports.index = async (req, res) => {
     } else {
         // get all campgrounds from DB
         Campground.find({}).skip((perPage * page) - perPage).limit(perPage).exec(function (err, campgrounds) {
-            Campground.count().exec(function (err, count) {
+            Campground.countDocuments().exec(function (err, count) {
                 if (err) {
                     console.log(err);
                 } else {
